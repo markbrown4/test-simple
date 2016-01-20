@@ -1,6 +1,4 @@
 
-var jsdom = require('jsdom');
-
-global.document = jsdom.jsdom('<html></html>');
+global.document = require('jsdom').jsdom('<html></html>');
 global.window = document.defaultView;
 global.$ = require('jquery')(window);
