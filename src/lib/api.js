@@ -1,8 +1,6 @@
 
-import { fetch } from 'whatwg-fetch';
-
 const get = (path)=> {
-  return fetch(`/api/${ path }`);
+  return fetch(`/api/${ path }`).then((resp)=> resp.json());
 }
 
 export default {
