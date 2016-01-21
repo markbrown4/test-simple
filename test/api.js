@@ -17,7 +17,7 @@ const jsonResponse = (obj)=> {
   return Promise.resolve(res);
 }
 
-describe('API.fetch(path)', ()=> {
+describe('API.get(path)', ()=> {
   it('should return a Promise', ()=> {
 
     sinon.stub(global, 'fetch', ()=> {
@@ -33,6 +33,7 @@ describe('API.fetch(path)', ()=> {
     API.get('cats').then((cats)=> {
       console.log("HUZZAH");
       assert(cats.length === 2);
+      assert(cats[0].url === 'lolcat.jpg');
     })
 
     global.fetch.restore();
