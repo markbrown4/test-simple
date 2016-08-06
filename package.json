@@ -18,7 +18,9 @@
     "jquery": "^2.2.0",
     "jsdom": "^7.2.2",
     "mocha": "^2.3.4",
+    "nock": "^8.0.0",
     "sinon": "^1.17.2",
-    "whatwg-fetch": "^0.11.0"
+    "whatwg-fetch": "^0.11.0",
+    "fetch-mock": "^5.0.5"
   }
 }
