@@ -5,7 +5,7 @@ import API from '../src/lib/api';
 import { jsonResponse } from './test_helper';
 
 describe('API.get(path)', ()=> {
-  it('should return a Promise with cats', ()=> {
+  it('should return a Promise with cats', (done)=> {
 
     sinon.stub(global, 'fetch', (url)=> {
       if (url == '/api/cats.json') {
@@ -19,9 +19,10 @@ describe('API.get(path)', ()=> {
       }
     });
 
-    API.get('cats.json').then((cats)=> {
-      assert(cats.length === 2);
-      assert(cats[0].url === 'lolcat.jpg');
+    API.get('cats.json').then((resp)=> {
+      assert(resp.cats.length === 2);
+      assert(resp.cats[0].url === 'lolcat.jpg');
+      done();
     })
 
     global.fetch.restore();
